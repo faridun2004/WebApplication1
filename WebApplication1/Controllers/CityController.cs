@@ -18,8 +18,8 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCities()
         {
-            var wallets = await _mediator.Send(new GetAllCitiesQuery());
-            return Ok(wallets);
+            var cities = await _mediator.Send(new GetAllCitiesQuery());
+            return Ok(cities);
         }
         [HttpPost("CreateCity")]
         public async Task<IActionResult> CreateCity([FromBody] CreateCityCommand command)

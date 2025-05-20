@@ -19,8 +19,8 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public async Task<IActionResult> GetRegions()
         {
-            var wallets = await _mediator.Send( new GetRegionsQuery());
-            return Ok(wallets);
+            var regions = await _mediator.Send( new GetRegionsQuery());
+            return Ok(regions);
         }
         [HttpPost("CreateRegion")]
         public async Task<IActionResult> CreateRegion([FromBody] CreateRegionCommand command)

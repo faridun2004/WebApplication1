@@ -5,8 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<CityDbContext>(con => con.UseSqlServer(builder.Configuration["ConnectionString"])
-                      .LogTo(Console.Write, LogLevel.Information));
+builder.Services.AddDbContext<CityDbContext>(con => con.UseNpgsql(builder.Configuration["ConnectionString"])
+                              .LogTo(Console.Write, LogLevel.Error));
 builder.Services.AddMediatR(cfg =>
                 cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 builder.Services.AddEndpointsApiExplorer();

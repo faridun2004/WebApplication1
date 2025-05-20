@@ -19,8 +19,8 @@ namespace WebApplication1.Controllers
          [HttpGet]
          public async Task<IActionResult> GetCountries()
          {
-              var wallets = await _mediator.Send(new GetCountriesQuery());
-              return Ok(wallets);
+              var countries = await _mediator.Send(new GetCountriesQuery());
+              return Ok(countries);
          }
          [HttpPost("CreateCountry")]
          public async Task<IActionResult> CreateCountry([FromBody] CreateCountryCommand command)
